@@ -1,7 +1,7 @@
 # mask-uncertainty-in-HSI
 
 
-This anonymized repository contains the testing code and pre-trained models for the paper **Calibrated Hyperspectral Image Reconstruction via Graph-based Self-Tuning Network**, which is submitted at CVPR 2022 with paper ID: **4875**.
+This repository contains the testing code and pre-trained models for the paper **Calibrated Hyperspectral Image Reconstruction via Graph-based Self-Tuning Network**.
 
 ## Requirements
 
