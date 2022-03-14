@@ -1,7 +1,7 @@
-# mask-uncertainty-in-HSI
+# Modeling mask uncertainty in hyperspectral image reconstruction
 
 
-This repository contains the testing code and pre-trained models for the paper **Calibrated Hyperspectral Image Reconstruction via Graph-based Self-Tuning Network**.
+This repository contains the testing code and pre-trained models for the paper **Modeling mask uncertainty in hyperspectral image reconstruction**.
 
 ## Requirements
 
@@ -42,5 +42,3 @@ python test.py
 | `one_to_one`      | model structure and model checkpoint for traditional setting (one-to-one) |
 
 
-
-# mask_uncertainty_spectral_SCI
