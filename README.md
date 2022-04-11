@@ -1,4 +1,4 @@
-# Modeling mask uncertainty in hyperspectral image reconstruction
+# Modeling Mask Uncertainty in Hyperspectral Image Reconstruction
 
 
 This repository contains the testing code and pre-trained models for the paper **Modeling mask uncertainty in hyperspectral image reconstruction**.
