@@ -10,7 +10,18 @@ This repository contains the testing code and pre-trained models for the paper *
 * Numpy 1.21.2
 * Scipy 1.7.1
 
+## Train
+
+28-channels dataset
+
+24-channels dataset
+
+
 ## Test
+
+28-channels dataset
+
+24-channels dataset
 
 Ten simulation testing HSI (256x256x28) are provided. Testing trials can be determined by specify `trial_num`
 
@@ -27,6 +38,8 @@ Run
 ```
 python test.py
 ```
+
+
 
 ## Structure of directories
 
