@@ -202,5 +202,5 @@ class TRAIN_MODEL(nn.Module):
         res += x
         x = self.tail(res)
 
-        return x, noise_posterior, noise_prior, perturb_mask
+        return x, g_phi_m
 
