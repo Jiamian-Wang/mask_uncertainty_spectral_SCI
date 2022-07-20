@@ -1,0 +1,266 @@
+2022-07-20 01:06:46,331 - INFO: ===> WARMUP Epoch 1 Complete: Avg.Loss:0.189512 Avg.Entropy:0.000000 time: 0.05mins
+2022-07-20 01:07:08,812 - INFO: ===> randomcrop mask || 100 trials || Epoch 1: testing psnr mean/std= 17.73449/0.00001, ssim mean/std = 0.32901/0.00000
+2022-07-20 01:07:09,062 - INFO: ===> real256 mask || Epoch 1: testing psnr = 17.734, ssim = 0.32901, time: 0.000mins
+2022-07-20 01:07:09,073 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_1.pth
+2022-07-20 01:07:11,012 - INFO: ===> WARMUP Epoch 2 Complete: Avg.Loss:0.106122 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:02,011 - INFO: ===> WARMUP Epoch 1 Complete: Avg.Loss:0.125147 Avg.Entropy:0.000000 time: 0.05mins
+2022-07-20 01:08:03,350 - INFO: ===> randomcrop mask || 5 trials || Epoch 1: testing psnr mean/std= 17.56682/0.00006, ssim mean/std = 0.34589/0.00000
+2022-07-20 01:08:03,588 - INFO: ===> real256 mask || Epoch 1: testing psnr = 17.567, ssim = 0.34589, time: 0.000mins
+2022-07-20 01:08:03,615 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_1.pth
+2022-07-20 01:08:05,531 - INFO: ===> WARMUP Epoch 2 Complete: Avg.Loss:0.136540 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:06,669 - INFO: ===> randomcrop mask || 5 trials || Epoch 2: testing psnr mean/std= 15.73665/0.00004, ssim mean/std = 0.25334/0.00000
+2022-07-20 01:08:06,911 - INFO: ===> real256 mask || Epoch 2: testing psnr = 15.737, ssim = 0.25334, time: 0.000mins
+2022-07-20 01:08:08,797 - INFO: ===> WARMUP Epoch 3 Complete: Avg.Loss:0.112368 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:09,933 - INFO: ===> randomcrop mask || 5 trials || Epoch 3: testing psnr mean/std= 18.82409/0.00001, ssim mean/std = 0.40902/0.00000
+2022-07-20 01:08:10,174 - INFO: ===> real256 mask || Epoch 3: testing psnr = 18.824, ssim = 0.40902, time: 0.000mins
+2022-07-20 01:08:10,186 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_3.pth
+2022-07-20 01:08:12,107 - INFO: ===> WARMUP Epoch 4 Complete: Avg.Loss:0.114509 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:13,243 - INFO: ===> randomcrop mask || 5 trials || Epoch 4: testing psnr mean/std= 18.96852/0.00002, ssim mean/std = 0.39358/0.00000
+2022-07-20 01:08:13,483 - INFO: ===> real256 mask || Epoch 4: testing psnr = 18.968, ssim = 0.39357, time: 0.000mins
+2022-07-20 01:08:13,494 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_4.pth
+2022-07-20 01:08:15,406 - INFO: ===> WARMUP Epoch 5 Complete: Avg.Loss:0.107712 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:16,553 - INFO: ===> randomcrop mask || 5 trials || Epoch 5: testing psnr mean/std= 18.48771/0.00002, ssim mean/std = 0.44947/0.00000
+2022-07-20 01:08:16,799 - INFO: ===> real256 mask || Epoch 5: testing psnr = 18.488, ssim = 0.44947, time: 0.000mins
+2022-07-20 01:08:18,716 - INFO: ===> WARMUP Epoch 6 Complete: Avg.Loss:0.060594 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:19,849 - INFO: ===> randomcrop mask || 5 trials || Epoch 6: testing psnr mean/std= 19.49549/0.00003, ssim mean/std = 0.48825/0.00000
+2022-07-20 01:08:20,089 - INFO: ===> real256 mask || Epoch 6: testing psnr = 19.495, ssim = 0.48824, time: 0.000mins
+2022-07-20 01:08:20,100 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_6.pth
+2022-07-20 01:08:21,992 - INFO: ===> WARMUP Epoch 7 Complete: Avg.Loss:0.093957 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:23,132 - INFO: ===> randomcrop mask || 5 trials || Epoch 7: testing psnr mean/std= 19.00429/0.00017, ssim mean/std = 0.41820/0.00000
+2022-07-20 01:08:23,370 - INFO: ===> real256 mask || Epoch 7: testing psnr = 19.004, ssim = 0.41820, time: 0.000mins
+2022-07-20 01:08:25,280 - INFO: ===> WARMUP Epoch 8 Complete: Avg.Loss:0.099489 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:26,434 - INFO: ===> randomcrop mask || 5 trials || Epoch 8: testing psnr mean/std= 18.59917/0.00002, ssim mean/std = 0.39809/0.00000
+2022-07-20 01:08:26,685 - INFO: ===> real256 mask || Epoch 8: testing psnr = 18.599, ssim = 0.39810, time: 0.000mins
+2022-07-20 01:08:28,595 - INFO: ===> WARMUP Epoch 9 Complete: Avg.Loss:0.093838 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:29,738 - INFO: ===> randomcrop mask || 5 trials || Epoch 9: testing psnr mean/std= 19.23754/0.00002, ssim mean/std = 0.49750/0.00000
+2022-07-20 01:08:29,986 - INFO: ===> real256 mask || Epoch 9: testing psnr = 19.238, ssim = 0.49750, time: 0.000mins
+2022-07-20 01:08:31,889 - INFO: ===> WARMUP Epoch 10 Complete: Avg.Loss:0.088688 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:33,028 - INFO: ===> randomcrop mask || 5 trials || Epoch 10: testing psnr mean/std= 19.23875/0.00002, ssim mean/std = 0.49190/0.00000
+2022-07-20 01:08:33,285 - INFO: ===> real256 mask || Epoch 10: testing psnr = 19.239, ssim = 0.49191, time: 0.000mins
+2022-07-20 01:08:35,197 - INFO: ===> WARMUP Epoch 11 Complete: Avg.Loss:0.068825 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:36,329 - INFO: ===> randomcrop mask || 5 trials || Epoch 11: testing psnr mean/std= 19.17027/0.00003, ssim mean/std = 0.51455/0.00000
+2022-07-20 01:08:36,578 - INFO: ===> real256 mask || Epoch 11: testing psnr = 19.170, ssim = 0.51454, time: 0.000mins
+2022-07-20 01:08:38,497 - INFO: ===> WARMUP Epoch 12 Complete: Avg.Loss:0.072490 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:39,622 - INFO: ===> randomcrop mask || 5 trials || Epoch 12: testing psnr mean/std= 18.91287/0.00005, ssim mean/std = 0.47207/0.00000
+2022-07-20 01:08:39,867 - INFO: ===> real256 mask || Epoch 12: testing psnr = 18.913, ssim = 0.47207, time: 0.000mins
+2022-07-20 01:08:41,764 - INFO: ===> WARMUP Epoch 13 Complete: Avg.Loss:0.095311 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:42,907 - INFO: ===> randomcrop mask || 5 trials || Epoch 13: testing psnr mean/std= 19.46496/0.00001, ssim mean/std = 0.51324/0.00000
+2022-07-20 01:08:43,150 - INFO: ===> real256 mask || Epoch 13: testing psnr = 19.465, ssim = 0.51324, time: 0.000mins
+2022-07-20 01:08:45,063 - INFO: ===> WARMUP Epoch 14 Complete: Avg.Loss:0.094923 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:46,217 - INFO: ===> randomcrop mask || 5 trials || Epoch 14: testing psnr mean/std= 19.84623/0.00002, ssim mean/std = 0.54912/0.00000
+2022-07-20 01:08:46,459 - INFO: ===> real256 mask || Epoch 14: testing psnr = 19.846, ssim = 0.54911, time: 0.000mins
+2022-07-20 01:08:46,470 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_14.pth
+2022-07-20 01:08:48,374 - INFO: ===> WARMUP Epoch 15 Complete: Avg.Loss:0.092716 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:49,517 - INFO: ===> randomcrop mask || 5 trials || Epoch 15: testing psnr mean/std= 19.61766/0.00004, ssim mean/std = 0.52840/0.00000
+2022-07-20 01:08:49,780 - INFO: ===> real256 mask || Epoch 15: testing psnr = 19.618, ssim = 0.52840, time: 0.000mins
+2022-07-20 01:08:51,689 - INFO: ===> WARMUP Epoch 16 Complete: Avg.Loss:0.084707 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:52,822 - INFO: ===> randomcrop mask || 5 trials || Epoch 16: testing psnr mean/std= 19.75952/0.00000, ssim mean/std = 0.46100/0.00000
+2022-07-20 01:08:53,069 - INFO: ===> real256 mask || Epoch 16: testing psnr = 19.759, ssim = 0.46100, time: 0.000mins
+2022-07-20 01:08:54,957 - INFO: ===> WARMUP Epoch 17 Complete: Avg.Loss:0.071869 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:56,088 - INFO: ===> randomcrop mask || 5 trials || Epoch 17: testing psnr mean/std= 19.53777/0.00004, ssim mean/std = 0.51291/0.00000
+2022-07-20 01:08:56,337 - INFO: ===> real256 mask || Epoch 17: testing psnr = 19.538, ssim = 0.51291, time: 0.000mins
+2022-07-20 01:08:58,249 - INFO: ===> WARMUP Epoch 18 Complete: Avg.Loss:0.076123 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:08:59,406 - INFO: ===> randomcrop mask || 5 trials || Epoch 18: testing psnr mean/std= 19.67043/0.00002, ssim mean/std = 0.47769/0.00000
+2022-07-20 01:08:59,650 - INFO: ===> real256 mask || Epoch 18: testing psnr = 19.670, ssim = 0.47769, time: 0.000mins
+2022-07-20 01:09:01,566 - INFO: ===> WARMUP Epoch 19 Complete: Avg.Loss:0.082302 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:02,729 - INFO: ===> randomcrop mask || 5 trials || Epoch 19: testing psnr mean/std= 18.71919/0.00002, ssim mean/std = 0.42988/0.00000
+2022-07-20 01:09:02,970 - INFO: ===> real256 mask || Epoch 19: testing psnr = 18.719, ssim = 0.42988, time: 0.000mins
+2022-07-20 01:09:04,856 - INFO: ===> WARMUP Epoch 20 Complete: Avg.Loss:0.082539 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:06,013 - INFO: ===> randomcrop mask || 5 trials || Epoch 20: testing psnr mean/std= 19.24483/0.00005, ssim mean/std = 0.47909/0.00000
+2022-07-20 01:09:06,254 - INFO: ===> real256 mask || Epoch 20: testing psnr = 19.245, ssim = 0.47910, time: 0.000mins
+2022-07-20 01:09:06,265 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_20.pth
+2022-07-20 01:09:08,177 - INFO: ===> RECON Epoch 1 Complete: Avg.Loss:0.098739 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:09,313 - INFO: ===> randomcrop mask || 5 trials || Epoch 21: testing psnr mean/std= 19.78242/0.00005, ssim mean/std = 0.34002/0.00000
+2022-07-20 01:09:09,562 - INFO: ===> real256 mask || Epoch 21: testing psnr = 19.783, ssim = 0.34003, time: 0.000mins
+2022-07-20 01:09:11,481 - INFO: ===> RECON Epoch 2 Complete: Avg.Loss:0.097947 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:12,620 - INFO: ===> randomcrop mask || 5 trials || Epoch 22: testing psnr mean/std= 19.44522/0.00005, ssim mean/std = 0.42871/0.00000
+2022-07-20 01:09:12,865 - INFO: ===> real256 mask || Epoch 22: testing psnr = 19.445, ssim = 0.42871, time: 0.000mins
+2022-07-20 01:09:14,765 - INFO: ===> RECON Epoch 3 Complete: Avg.Loss:0.097119 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:15,920 - INFO: ===> randomcrop mask || 5 trials || Epoch 23: testing psnr mean/std= 19.35678/0.00005, ssim mean/std = 0.49869/0.00000
+2022-07-20 01:09:16,171 - INFO: ===> real256 mask || Epoch 23: testing psnr = 19.357, ssim = 0.49869, time: 0.000mins
+2022-07-20 01:09:17,056 - INFO: ===> NOISE Epoch 1 Complete: Avg.Loss:0.072897 Avg.Entropy:1.059355 time: 0.01mins
+2022-07-20 01:09:18,198 - INFO: ===> randomcrop mask || 5 trials || Epoch 24: testing psnr mean/std= 19.35670/0.00002, ssim mean/std = 0.49868/0.00000
+2022-07-20 01:09:18,444 - INFO: ===> real256 mask || Epoch 24: testing psnr = 19.357, ssim = 0.49868, time: 0.000mins
+2022-07-20 01:09:19,141 - INFO: ===> NOISE Epoch 2 Complete: Avg.Loss:0.091844 Avg.Entropy:1.059806 time: 0.01mins
+2022-07-20 01:09:20,282 - INFO: ===> randomcrop mask || 5 trials || Epoch 25: testing psnr mean/std= 19.35672/0.00003, ssim mean/std = 0.49869/0.00000
+2022-07-20 01:09:20,528 - INFO: ===> real256 mask || Epoch 25: testing psnr = 19.357, ssim = 0.49869, time: 0.000mins
+2022-07-20 01:09:21,227 - INFO: ===> NOISE Epoch 3 Complete: Avg.Loss:0.089872 Avg.Entropy:1.062824 time: 0.01mins
+2022-07-20 01:09:22,348 - INFO: ===> randomcrop mask || 5 trials || Epoch 26: testing psnr mean/std= 19.35677/0.00004, ssim mean/std = 0.49869/0.00000
+2022-07-20 01:09:22,592 - INFO: ===> real256 mask || Epoch 26: testing psnr = 19.357, ssim = 0.49869, time: 0.000mins
+2022-07-20 01:09:23,301 - INFO: ===> NOISE Epoch 4 Complete: Avg.Loss:0.105582 Avg.Entropy:1.063555 time: 0.01mins
+2022-07-20 01:09:24,444 - INFO: ===> randomcrop mask || 5 trials || Epoch 27: testing psnr mean/std= 19.35669/0.00003, ssim mean/std = 0.49868/0.00000
+2022-07-20 01:09:24,691 - INFO: ===> real256 mask || Epoch 27: testing psnr = 19.357, ssim = 0.49869, time: 0.000mins
+2022-07-20 01:09:25,409 - INFO: ===> NOISE Epoch 5 Complete: Avg.Loss:0.097358 Avg.Entropy:1.065174 time: 0.01mins
+2022-07-20 01:09:26,561 - INFO: ===> randomcrop mask || 5 trials || Epoch 28: testing psnr mean/std= 19.35676/0.00004, ssim mean/std = 0.49869/0.00000
+2022-07-20 01:09:26,802 - INFO: ===> real256 mask || Epoch 28: testing psnr = 19.357, ssim = 0.49869, time: 0.000mins
+2022-07-20 01:09:28,703 - INFO: ===> RECON Epoch 1 Complete: Avg.Loss:0.126949 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:29,824 - INFO: ===> randomcrop mask || 5 trials || Epoch 29: testing psnr mean/std= 19.16744/0.00002, ssim mean/std = 0.47293/0.00000
+2022-07-20 01:09:30,066 - INFO: ===> real256 mask || Epoch 29: testing psnr = 19.167, ssim = 0.47292, time: 0.000mins
+2022-07-20 01:09:31,960 - INFO: ===> RECON Epoch 2 Complete: Avg.Loss:0.097538 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:33,096 - INFO: ===> randomcrop mask || 5 trials || Epoch 30: testing psnr mean/std= 19.27227/0.00001, ssim mean/std = 0.47310/0.00000
+2022-07-20 01:09:33,351 - INFO: ===> real256 mask || Epoch 30: testing psnr = 19.272, ssim = 0.47309, time: 0.000mins
+2022-07-20 01:09:35,251 - INFO: ===> RECON Epoch 3 Complete: Avg.Loss:0.083493 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:36,384 - INFO: ===> randomcrop mask || 5 trials || Epoch 31: testing psnr mean/std= 17.90128/0.00003, ssim mean/std = 0.46129/0.00000
+2022-07-20 01:09:36,629 - INFO: ===> real256 mask || Epoch 31: testing psnr = 17.901, ssim = 0.46129, time: 0.000mins
+2022-07-20 01:09:37,319 - INFO: ===> NOISE Epoch 1 Complete: Avg.Loss:0.100218 Avg.Entropy:1.066821 time: 0.01mins
+2022-07-20 01:09:38,465 - INFO: ===> randomcrop mask || 5 trials || Epoch 32: testing psnr mean/std= 17.90131/0.00002, ssim mean/std = 0.46129/0.00000
+2022-07-20 01:09:38,708 - INFO: ===> real256 mask || Epoch 32: testing psnr = 17.901, ssim = 0.46129, time: 0.000mins
+2022-07-20 01:09:39,389 - INFO: ===> NOISE Epoch 2 Complete: Avg.Loss:0.078983 Avg.Entropy:1.063802 time: 0.01mins
+2022-07-20 01:09:40,536 - INFO: ===> randomcrop mask || 5 trials || Epoch 33: testing psnr mean/std= 17.90126/0.00002, ssim mean/std = 0.46129/0.00000
+2022-07-20 01:09:40,784 - INFO: ===> real256 mask || Epoch 33: testing psnr = 17.901, ssim = 0.46129, time: 0.000mins
+2022-07-20 01:09:41,488 - INFO: ===> NOISE Epoch 3 Complete: Avg.Loss:0.084075 Avg.Entropy:1.060398 time: 0.01mins
+2022-07-20 01:09:42,638 - INFO: ===> randomcrop mask || 5 trials || Epoch 34: testing psnr mean/std= 17.90126/0.00001, ssim mean/std = 0.46129/0.00000
+2022-07-20 01:09:42,898 - INFO: ===> real256 mask || Epoch 34: testing psnr = 17.901, ssim = 0.46129, time: 0.000mins
+2022-07-20 01:09:43,592 - INFO: ===> NOISE Epoch 4 Complete: Avg.Loss:0.073988 Avg.Entropy:1.059516 time: 0.01mins
+2022-07-20 01:09:44,733 - INFO: ===> randomcrop mask || 5 trials || Epoch 35: testing psnr mean/std= 17.90124/0.00003, ssim mean/std = 0.46129/0.00000
+2022-07-20 01:09:44,986 - INFO: ===> real256 mask || Epoch 35: testing psnr = 17.901, ssim = 0.46129, time: 0.000mins
+2022-07-20 01:09:45,680 - INFO: ===> NOISE Epoch 5 Complete: Avg.Loss:0.077957 Avg.Entropy:1.060069 time: 0.01mins
+2022-07-20 01:09:46,831 - INFO: ===> randomcrop mask || 5 trials || Epoch 36: testing psnr mean/std= 17.90119/0.00005, ssim mean/std = 0.46129/0.00000
+2022-07-20 01:09:47,085 - INFO: ===> real256 mask || Epoch 36: testing psnr = 17.901, ssim = 0.46129, time: 0.000mins
+2022-07-20 01:09:49,001 - INFO: ===> RECON Epoch 1 Complete: Avg.Loss:0.113842 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:50,158 - INFO: ===> randomcrop mask || 5 trials || Epoch 37: testing psnr mean/std= 18.41038/0.00003, ssim mean/std = 0.40105/0.00000
+2022-07-20 01:09:50,403 - INFO: ===> real256 mask || Epoch 37: testing psnr = 18.410, ssim = 0.40105, time: 0.000mins
+2022-07-20 01:09:52,345 - INFO: ===> RECON Epoch 2 Complete: Avg.Loss:0.095982 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:53,495 - INFO: ===> randomcrop mask || 5 trials || Epoch 38: testing psnr mean/std= 19.00460/0.00004, ssim mean/std = 0.48678/0.00000
+2022-07-20 01:09:53,743 - INFO: ===> real256 mask || Epoch 38: testing psnr = 19.005, ssim = 0.48677, time: 0.000mins
+2022-07-20 01:09:55,688 - INFO: ===> RECON Epoch 3 Complete: Avg.Loss:0.086757 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:09:56,840 - INFO: ===> randomcrop mask || 5 trials || Epoch 39: testing psnr mean/std= 19.13732/0.00005, ssim mean/std = 0.49659/0.00000
+2022-07-20 01:09:57,085 - INFO: ===> real256 mask || Epoch 39: testing psnr = 19.137, ssim = 0.49660, time: 0.000mins
+2022-07-20 01:09:57,818 - INFO: ===> NOISE Epoch 1 Complete: Avg.Loss:0.081384 Avg.Entropy:1.061603 time: 0.01mins
+2022-07-20 01:09:58,988 - INFO: ===> randomcrop mask || 5 trials || Epoch 40: testing psnr mean/std= 19.13752/0.00002, ssim mean/std = 0.49660/0.00000
+2022-07-20 01:09:59,237 - INFO: ===> real256 mask || Epoch 40: testing psnr = 19.137, ssim = 0.49659, time: 0.000mins
+2022-07-20 01:09:59,935 - INFO: ===> NOISE Epoch 2 Complete: Avg.Loss:0.098890 Avg.Entropy:1.063455 time: 0.01mins
+2022-07-20 01:10:01,112 - INFO: ===> randomcrop mask || 5 trials || Epoch 41: testing psnr mean/std= 19.13737/0.00009, ssim mean/std = 0.49660/0.00000
+2022-07-20 01:10:01,375 - INFO: ===> real256 mask || Epoch 41: testing psnr = 19.138, ssim = 0.49659, time: 0.000mins
+2022-07-20 01:10:02,064 - INFO: ===> NOISE Epoch 3 Complete: Avg.Loss:0.086180 Avg.Entropy:1.067032 time: 0.01mins
+2022-07-20 01:10:03,229 - INFO: ===> randomcrop mask || 5 trials || Epoch 42: testing psnr mean/std= 19.13763/0.00007, ssim mean/std = 0.49661/0.00000
+2022-07-20 01:10:03,477 - INFO: ===> real256 mask || Epoch 42: testing psnr = 19.137, ssim = 0.49659, time: 0.000mins
+2022-07-20 01:10:04,177 - INFO: ===> NOISE Epoch 4 Complete: Avg.Loss:0.079012 Avg.Entropy:1.072713 time: 0.01mins
+2022-07-20 01:10:05,332 - INFO: ===> randomcrop mask || 5 trials || Epoch 43: testing psnr mean/std= 19.13750/0.00004, ssim mean/std = 0.49660/0.00000
+2022-07-20 01:10:05,578 - INFO: ===> real256 mask || Epoch 43: testing psnr = 19.137, ssim = 0.49660, time: 0.000mins
+2022-07-20 01:10:06,315 - INFO: ===> NOISE Epoch 5 Complete: Avg.Loss:0.088070 Avg.Entropy:1.077634 time: 0.01mins
+2022-07-20 01:10:07,478 - INFO: ===> randomcrop mask || 5 trials || Epoch 44: testing psnr mean/std= 19.13781/0.00006, ssim mean/std = 0.49661/0.00000
+2022-07-20 01:10:07,733 - INFO: ===> real256 mask || Epoch 44: testing psnr = 19.138, ssim = 0.49662, time: 0.000mins
+2022-07-20 01:10:09,693 - INFO: ===> RECON Epoch 1 Complete: Avg.Loss:0.094307 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:10:10,864 - INFO: ===> randomcrop mask || 5 trials || Epoch 45: testing psnr mean/std= 19.44215/0.00002, ssim mean/std = 0.47391/0.00000
+2022-07-20 01:10:11,108 - INFO: ===> real256 mask || Epoch 45: testing psnr = 19.442, ssim = 0.47390, time: 0.000mins
+2022-07-20 01:10:13,051 - INFO: ===> RECON Epoch 2 Complete: Avg.Loss:0.083869 Avg.Entropy:0.000000 time: 0.03mins
+2022-07-20 01:11:53,299 - INFO: ===> WARMUP Epoch 1 Complete: Avg.Loss:0.162027 Avg.Entropy:0.000000 time: 0.04mins
+2022-07-20 01:11:54,640 - INFO: ===> randomcrop mask || 5 trials || Epoch 1: testing psnr mean/std= 18.18642/0.00003, ssim mean/std = 0.42356/0.00000
+2022-07-20 01:11:54,883 - INFO: ===> real256 mask || Epoch 1: testing psnr = 18.186, ssim = 0.42355, time: 0.000mins
+2022-07-20 01:11:54,909 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_1.pth
+2022-07-20 01:11:56,304 - INFO: ===> WARMUP Epoch 2 Complete: Avg.Loss:0.098531 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:11:57,465 - INFO: ===> randomcrop mask || 5 trials || Epoch 2: testing psnr mean/std= 18.91929/0.00009, ssim mean/std = 0.43678/0.00000
+2022-07-20 01:11:57,708 - INFO: ===> real256 mask || Epoch 2: testing psnr = 18.919, ssim = 0.43678, time: 0.000mins
+2022-07-20 01:11:57,719 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_2.pth
+2022-07-20 01:11:57,731 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_2.pth
+2022-07-20 01:11:59,109 - INFO: ===> RECON Epoch 1 Complete: Avg.Loss:0.150654 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:00,243 - INFO: ===> randomcrop mask || 5 trials || Epoch 3: testing psnr mean/std= 18.22442/0.00003, ssim mean/std = 0.38893/0.00000
+2022-07-20 01:12:00,491 - INFO: ===> real256 mask || Epoch 3: testing psnr = 18.224, ssim = 0.38892, time: 0.000mins
+2022-07-20 01:12:01,871 - INFO: ===> RECON Epoch 2 Complete: Avg.Loss:0.107438 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:02,996 - INFO: ===> randomcrop mask || 5 trials || Epoch 4: testing psnr mean/std= 18.74314/0.00003, ssim mean/std = 0.40073/0.00000
+2022-07-20 01:12:03,236 - INFO: ===> real256 mask || Epoch 4: testing psnr = 18.743, ssim = 0.40072, time: 0.000mins
+2022-07-20 01:12:04,628 - INFO: ===> RECON Epoch 3 Complete: Avg.Loss:0.097081 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:05,772 - INFO: ===> randomcrop mask || 5 trials || Epoch 5: testing psnr mean/std= 19.24900/0.00007, ssim mean/std = 0.43933/0.00000
+2022-07-20 01:12:06,015 - INFO: ===> real256 mask || Epoch 5: testing psnr = 19.249, ssim = 0.43934, time: 0.000mins
+2022-07-20 01:12:06,026 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_5.pth
+2022-07-20 01:12:06,428 - INFO: ===> NOISE Epoch 1 Complete: Avg.Loss:0.084249 Avg.Entropy:1.974748 time: 0.01mins
+2022-07-20 01:12:07,561 - INFO: ===> randomcrop mask || 5 trials || Epoch 6: testing psnr mean/std= 19.24886/0.00005, ssim mean/std = 0.43934/0.00000
+2022-07-20 01:12:07,811 - INFO: ===> real256 mask || Epoch 6: testing psnr = 19.249, ssim = 0.43934, time: 0.000mins
+2022-07-20 01:12:08,021 - INFO: ===> NOISE Epoch 2 Complete: Avg.Loss:0.098830 Avg.Entropy:1.980992 time: 0.00mins
+2022-07-20 01:12:09,146 - INFO: ===> randomcrop mask || 5 trials || Epoch 7: testing psnr mean/std= 19.24902/0.00007, ssim mean/std = 0.43934/0.00000
+2022-07-20 01:12:09,392 - INFO: ===> real256 mask || Epoch 7: testing psnr = 19.249, ssim = 0.43935, time: 0.000mins
+2022-07-20 01:12:09,403 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_7.pth
+2022-07-20 01:12:09,626 - INFO: ===> NOISE Epoch 3 Complete: Avg.Loss:0.086229 Avg.Entropy:1.988559 time: 0.00mins
+2022-07-20 01:12:10,781 - INFO: ===> randomcrop mask || 5 trials || Epoch 8: testing psnr mean/std= 19.24890/0.00007, ssim mean/std = 0.43934/0.00000
+2022-07-20 01:12:11,030 - INFO: ===> real256 mask || Epoch 8: testing psnr = 19.249, ssim = 0.43935, time: 0.000mins
+2022-07-20 01:12:11,247 - INFO: ===> NOISE Epoch 4 Complete: Avg.Loss:0.084874 Avg.Entropy:1.998233 time: 0.00mins
+2022-07-20 01:12:12,387 - INFO: ===> randomcrop mask || 5 trials || Epoch 9: testing psnr mean/std= 19.24897/0.00002, ssim mean/std = 0.43935/0.00000
+2022-07-20 01:12:12,634 - INFO: ===> real256 mask || Epoch 9: testing psnr = 19.249, ssim = 0.43936, time: 0.000mins
+2022-07-20 01:12:12,848 - INFO: ===> NOISE Epoch 5 Complete: Avg.Loss:0.075798 Avg.Entropy:2.007738 time: 0.00mins
+2022-07-20 01:12:13,991 - INFO: ===> randomcrop mask || 5 trials || Epoch 10: testing psnr mean/std= 19.24886/0.00007, ssim mean/std = 0.43935/0.00000
+2022-07-20 01:12:14,231 - INFO: ===> real256 mask || Epoch 10: testing psnr = 19.249, ssim = 0.43936, time: 0.000mins
+2022-07-20 01:12:15,626 - INFO: ===> RECON Epoch 1 Complete: Avg.Loss:0.101301 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:16,757 - INFO: ===> randomcrop mask || 5 trials || Epoch 11: testing psnr mean/std= 18.37676/0.00004, ssim mean/std = 0.39231/0.00000
+2022-07-20 01:12:17,000 - INFO: ===> real256 mask || Epoch 11: testing psnr = 18.377, ssim = 0.39231, time: 0.000mins
+2022-07-20 01:12:18,397 - INFO: ===> RECON Epoch 2 Complete: Avg.Loss:0.100950 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:19,524 - INFO: ===> randomcrop mask || 5 trials || Epoch 12: testing psnr mean/std= 19.30963/0.00006, ssim mean/std = 0.47208/0.00000
+2022-07-20 01:12:19,769 - INFO: ===> real256 mask || Epoch 12: testing psnr = 19.310, ssim = 0.47207, time: 0.000mins
+2022-07-20 01:12:19,780 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_12.pth
+2022-07-20 01:12:21,177 - INFO: ===> RECON Epoch 3 Complete: Avg.Loss:0.098245 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:22,315 - INFO: ===> randomcrop mask || 5 trials || Epoch 13: testing psnr mean/std= 19.61714/0.00005, ssim mean/std = 0.48051/0.00000
+2022-07-20 01:12:22,558 - INFO: ===> real256 mask || Epoch 13: testing psnr = 19.617, ssim = 0.48050, time: 0.000mins
+2022-07-20 01:12:22,569 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_13.pth
+2022-07-20 01:12:22,784 - INFO: ===> NOISE Epoch 1 Complete: Avg.Loss:0.087681 Avg.Entropy:2.011499 time: 0.00mins
+2022-07-20 01:12:23,909 - INFO: ===> randomcrop mask || 5 trials || Epoch 14: testing psnr mean/std= 19.61712/0.00003, ssim mean/std = 0.48051/0.00000
+2022-07-20 01:12:24,152 - INFO: ===> real256 mask || Epoch 14: testing psnr = 19.617, ssim = 0.48051, time: 0.000mins
+2022-07-20 01:12:24,367 - INFO: ===> NOISE Epoch 2 Complete: Avg.Loss:0.084160 Avg.Entropy:2.010968 time: 0.00mins
+2022-07-20 01:12:25,503 - INFO: ===> randomcrop mask || 5 trials || Epoch 15: testing psnr mean/std= 19.61715/0.00010, ssim mean/std = 0.48051/0.00001
+2022-07-20 01:12:25,745 - INFO: ===> real256 mask || Epoch 15: testing psnr = 19.617, ssim = 0.48048, time: 0.000mins
+2022-07-20 01:12:25,756 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_15.pth
+2022-07-20 01:12:25,965 - INFO: ===> NOISE Epoch 3 Complete: Avg.Loss:0.088327 Avg.Entropy:2.015517 time: 0.00mins
+2022-07-20 01:12:27,100 - INFO: ===> randomcrop mask || 5 trials || Epoch 16: testing psnr mean/std= 19.61705/0.00004, ssim mean/std = 0.48051/0.00000
+2022-07-20 01:12:27,345 - INFO: ===> real256 mask || Epoch 16: testing psnr = 19.617, ssim = 0.48050, time: 0.000mins
+2022-07-20 01:12:27,562 - INFO: ===> NOISE Epoch 4 Complete: Avg.Loss:0.088232 Avg.Entropy:2.018868 time: 0.00mins
+2022-07-20 01:12:28,707 - INFO: ===> randomcrop mask || 5 trials || Epoch 17: testing psnr mean/std= 19.61709/0.00007, ssim mean/std = 0.48051/0.00000
+2022-07-20 01:12:28,951 - INFO: ===> real256 mask || Epoch 17: testing psnr = 19.617, ssim = 0.48050, time: 0.000mins
+2022-07-20 01:12:29,174 - INFO: ===> NOISE Epoch 5 Complete: Avg.Loss:0.081580 Avg.Entropy:2.020435 time: 0.00mins
+2022-07-20 01:12:30,323 - INFO: ===> randomcrop mask || 5 trials || Epoch 18: testing psnr mean/std= 19.61718/0.00005, ssim mean/std = 0.48051/0.00000
+2022-07-20 01:12:30,569 - INFO: ===> real256 mask || Epoch 18: testing psnr = 19.617, ssim = 0.48049, time: 0.000mins
+2022-07-20 01:12:30,581 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_18.pth
+2022-07-20 01:12:31,965 - INFO: ===> RECON Epoch 1 Complete: Avg.Loss:0.104614 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:33,102 - INFO: ===> randomcrop mask || 5 trials || Epoch 19: testing psnr mean/std= 18.79156/0.00003, ssim mean/std = 0.44507/0.00000
+2022-07-20 01:12:33,355 - INFO: ===> real256 mask || Epoch 19: testing psnr = 18.792, ssim = 0.44508, time: 0.000mins
+2022-07-20 01:12:34,777 - INFO: ===> RECON Epoch 2 Complete: Avg.Loss:0.114684 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:35,919 - INFO: ===> randomcrop mask || 5 trials || Epoch 20: testing psnr mean/std= 19.32743/0.00007, ssim mean/std = 0.46588/0.00000
+2022-07-20 01:12:36,169 - INFO: ===> real256 mask || Epoch 20: testing psnr = 19.328, ssim = 0.46588, time: 0.000mins
+2022-07-20 01:12:37,571 - INFO: ===> RECON Epoch 3 Complete: Avg.Loss:0.106551 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:38,712 - INFO: ===> randomcrop mask || 5 trials || Epoch 21: testing psnr mean/std= 19.74588/0.00004, ssim mean/std = 0.50065/0.00000
+2022-07-20 01:12:38,955 - INFO: ===> real256 mask || Epoch 21: testing psnr = 19.746, ssim = 0.50064, time: 0.000mins
+2022-07-20 01:12:38,966 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_21.pth
+2022-07-20 01:12:39,207 - INFO: ===> NOISE Epoch 1 Complete: Avg.Loss:0.069633 Avg.Entropy:2.022801 time: 0.00mins
+2022-07-20 01:12:40,347 - INFO: ===> randomcrop mask || 5 trials || Epoch 22: testing psnr mean/std= 19.74592/0.00005, ssim mean/std = 0.50065/0.00000
+2022-07-20 01:12:40,592 - INFO: ===> real256 mask || Epoch 22: testing psnr = 19.746, ssim = 0.50065, time: 0.000mins
+2022-07-20 01:12:40,602 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_22.pth
+2022-07-20 01:12:40,814 - INFO: ===> NOISE Epoch 2 Complete: Avg.Loss:0.094557 Avg.Entropy:2.029466 time: 0.00mins
+2022-07-20 01:12:41,940 - INFO: ===> randomcrop mask || 5 trials || Epoch 23: testing psnr mean/std= 19.74605/0.00005, ssim mean/std = 0.50066/0.00000
+2022-07-20 01:12:42,183 - INFO: ===> real256 mask || Epoch 23: testing psnr = 19.746, ssim = 0.50067, time: 0.000mins
+2022-07-20 01:12:42,194 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_23.pth
+2022-07-20 01:12:42,409 - INFO: ===> NOISE Epoch 3 Complete: Avg.Loss:0.080949 Avg.Entropy:2.039765 time: 0.00mins
+2022-07-20 01:12:43,536 - INFO: ===> randomcrop mask || 5 trials || Epoch 24: testing psnr mean/std= 19.74596/0.00007, ssim mean/std = 0.50066/0.00000
+2022-07-20 01:12:43,780 - INFO: ===> real256 mask || Epoch 24: testing psnr = 19.746, ssim = 0.50065, time: 0.000mins
+2022-07-20 01:12:43,989 - INFO: ===> NOISE Epoch 4 Complete: Avg.Loss:0.096158 Avg.Entropy:2.048937 time: 0.00mins
+2022-07-20 01:12:45,123 - INFO: ===> randomcrop mask || 5 trials || Epoch 25: testing psnr mean/std= 19.74604/0.00003, ssim mean/std = 0.50066/0.00000
+2022-07-20 01:12:45,368 - INFO: ===> real256 mask || Epoch 25: testing psnr = 19.746, ssim = 0.50066, time: 0.000mins
+2022-07-20 01:12:45,586 - INFO: ===> NOISE Epoch 5 Complete: Avg.Loss:0.080418 Avg.Entropy:2.056152 time: 0.00mins
+2022-07-20 01:12:46,739 - INFO: ===> randomcrop mask || 5 trials || Epoch 26: testing psnr mean/std= 19.74614/0.00011, ssim mean/std = 0.50067/0.00000
+2022-07-20 01:12:46,988 - INFO: ===> real256 mask || Epoch 26: testing psnr = 19.746, ssim = 0.50068, time: 0.000mins
+2022-07-20 01:12:47,001 - INFO: Checkpoint saved to ./model_GST/model_GST/model_epoch_26.pth
+2022-07-20 01:12:48,422 - INFO: ===> RECON Epoch 1 Complete: Avg.Loss:0.133252 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:49,577 - INFO: ===> randomcrop mask || 5 trials || Epoch 27: testing psnr mean/std= 19.15905/0.00007, ssim mean/std = 0.46432/0.00000
+2022-07-20 01:12:49,820 - INFO: ===> real256 mask || Epoch 27: testing psnr = 19.159, ssim = 0.46432, time: 0.000mins
+2022-07-20 01:12:51,232 - INFO: ===> RECON Epoch 2 Complete: Avg.Loss:0.096790 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:52,370 - INFO: ===> randomcrop mask || 5 trials || Epoch 28: testing psnr mean/std= 19.45635/0.00003, ssim mean/std = 0.47001/0.00000
+2022-07-20 01:12:52,615 - INFO: ===> real256 mask || Epoch 28: testing psnr = 19.457, ssim = 0.47002, time: 0.000mins
+2022-07-20 01:12:54,008 - INFO: ===> RECON Epoch 3 Complete: Avg.Loss:0.107136 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:12:55,153 - INFO: ===> randomcrop mask || 5 trials || Epoch 29: testing psnr mean/std= 19.38317/0.00005, ssim mean/std = 0.49773/0.00000
+2022-07-20 01:12:55,408 - INFO: ===> real256 mask || Epoch 29: testing psnr = 19.383, ssim = 0.49775, time: 0.000mins
+2022-07-20 01:12:55,628 - INFO: ===> NOISE Epoch 1 Complete: Avg.Loss:0.078793 Avg.Entropy:2.067083 time: 0.00mins
+2022-07-20 01:12:56,771 - INFO: ===> randomcrop mask || 5 trials || Epoch 30: testing psnr mean/std= 19.38338/0.00007, ssim mean/std = 0.49774/0.00000
+2022-07-20 01:12:57,015 - INFO: ===> real256 mask || Epoch 30: testing psnr = 19.383, ssim = 0.49773, time: 0.000mins
+2022-07-20 01:12:57,228 - INFO: ===> NOISE Epoch 2 Complete: Avg.Loss:0.086441 Avg.Entropy:2.069252 time: 0.00mins
+2022-07-20 01:12:58,384 - INFO: ===> randomcrop mask || 5 trials || Epoch 31: testing psnr mean/std= 19.38327/0.00007, ssim mean/std = 0.49774/0.00000
+2022-07-20 01:12:58,630 - INFO: ===> real256 mask || Epoch 31: testing psnr = 19.383, ssim = 0.49775, time: 0.000mins
+2022-07-20 01:12:58,837 - INFO: ===> NOISE Epoch 3 Complete: Avg.Loss:0.081674 Avg.Entropy:2.075213 time: 0.00mins
+2022-07-20 01:12:59,990 - INFO: ===> randomcrop mask || 5 trials || Epoch 32: testing psnr mean/std= 19.38315/0.00007, ssim mean/std = 0.49774/0.00000
+2022-07-20 01:13:00,235 - INFO: ===> real256 mask || Epoch 32: testing psnr = 19.383, ssim = 0.49774, time: 0.000mins
+2022-07-20 01:13:00,456 - INFO: ===> NOISE Epoch 4 Complete: Avg.Loss:0.092114 Avg.Entropy:2.078723 time: 0.00mins
+2022-07-20 01:13:01,599 - INFO: ===> randomcrop mask || 5 trials || Epoch 33: testing psnr mean/std= 19.38339/0.00003, ssim mean/std = 0.49775/0.00000
+2022-07-20 01:13:01,843 - INFO: ===> real256 mask || Epoch 33: testing psnr = 19.384, ssim = 0.49775, time: 0.000mins
+2022-07-20 01:13:02,053 - INFO: ===> NOISE Epoch 5 Complete: Avg.Loss:0.076016 Avg.Entropy:2.083470 time: 0.00mins
+2022-07-20 01:13:03,198 - INFO: ===> randomcrop mask || 5 trials || Epoch 34: testing psnr mean/std= 19.38350/0.00005, ssim mean/std = 0.49775/0.00000
+2022-07-20 01:13:03,442 - INFO: ===> real256 mask || Epoch 34: testing psnr = 19.383, ssim = 0.49775, time: 0.000mins
+2022-07-20 01:13:04,828 - INFO: ===> RECON Epoch 1 Complete: Avg.Loss:0.126247 Avg.Entropy:0.000000 time: 0.02mins
+2022-07-20 01:13:05,974 - INFO: ===> randomcrop mask || 5 trials || Epoch 35: testing psnr mean/std= 18.66367/0.00008, ssim mean/std = 0.41309/0.00000
+2022-07-20 01:13:06,228 - INFO: ===> real256 mask || Epoch 35: testing psnr = 18.664, ssim = 0.41308, time: 0.000mins
+2022-07-20 01:13:07,617 - INFO: ===> RECON Epoch 2 Complete: Avg.Loss:0.076645 Avg.Entropy:0.000000 time: 0.02mins
