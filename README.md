@@ -68,3 +68,19 @@ python test.py
 | `one_to_one`      | model structure and model checkpoint for traditional setting (one-to-one) |
 
 
+## Citation
+If you find the code helpful in your resarch, please cite the following papers.
+```
+@article{wang2021calibrated,
+  title={Calibrated Hyperspectral Image Reconstruction via Graph-based Self-Tuning Network},
+  author={Wang, Jiamian and Zhang, Yulun and Yuan, Xin and Meng, Ziyi and Tao, Zhiqiang},
+  journal={arXiv preprint arXiv:2112.15362},
+  year={2021}
+}
+
+@article{wang2021new,
+  title={A new backbone for hyperspectral image reconstruction},
+  author={Wang, Jiamian and Zhang, Yulun and Yuan, Xin and Fu, Yun and Tao, Zhiqiang},
+  journal={arXiv preprint arXiv:2108.07739},
+  year={2021}
+}
