@@ -10,7 +10,7 @@ Recently, hyperspectral imaging (HSI) has attracted increasing research attentio
 ![RDN](/figure/framework.png)
 Figure 1. Illustration of modeling mask uncertainty with the proposed Graph-based Self-Tuning (GST) network
 
-![RDN](/figure/M2M.png)
+![RDN](/figure/M2M_tab.png)
 
 
 ## Requirements
