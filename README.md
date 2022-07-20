@@ -1,7 +1,7 @@
 # Modeling Mask Uncertainty in Hyperspectral Image Reconstruction
 
 
-This repository contains the testing code and pre-trained models for the paper **Modeling mask uncertainty in hyperspectral image reconstruction**.
+This repository contains the source code and pre-trained models for the paper **Modeling mask uncertainty in hyperspectral image reconstruction**.
 
 ## Requirements
 
@@ -12,9 +12,11 @@ This repository contains the testing code and pre-trained models for the paper *
 
 ## Train
 
-28-channels dataset
+Run
 
-24-channels dataset
+```
+python train.py
+```
 
 
 ## Test
