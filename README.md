@@ -3,6 +3,14 @@
 
 This repository contains the source code and pre-trained models for the paper **Modeling mask uncertainty in hyperspectral image reconstruction**.
 
+## Introduction
+Recently, hyperspectral imaging (HSI) has attracted increasing research attention, especially for the ones based on a coded aperture snapshot spectral imaging (CASSI) system. Existing deep HSI reconstruction models are generally trained on paired data to retrieve original signals upon 2D compressed measurements given by a particular optical hardware mask in CASSI, during which the mask largely impacts the reconstruction performance and could work as a “model hyperparameter” governing on data augmentations. This mask-specific training style will lead to a hardware miscalibration issue, which sets up barriers to deploying deep HSI models among different hardware and noisy environments. To address this challenge, we introduce mask uncertainty for HSI with a complete variational Bayesian learning treatment and explicitly model it through a mask decomposition inspired by real hardware. Specifically, we propose a novel Graph-based Self-Tuning (GST) network to reason uncertainties adapting to varying spatial structures of masks among dif- ferent hardware. Moreover, we develop a bilevel optimization framework to balance HSI reconstruction and uncertainty estimation, accounting for the hyperparameter property of masks. Extensive experimental results validate the effectiveness (over 33/30 dB) of the proposed method under two miscalibration scenarios and demonstrate a highly competitive performance compared with the state-of-the-art well-calibrated methods.
+
+![RDB](/figure/bilevel.png)
+Figure 1. Illustration of the proposed bilevel optimization framework
+![RDN](/figure/framework.png)
+Figure 2. Illustration of modeling mask uncertainty with the proposed Graph-based Self-Tuning (GST) network
+
 ## Requirements
 
 * Python 3.7.10
