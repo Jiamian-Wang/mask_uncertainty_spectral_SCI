@@ -69,7 +69,7 @@ python test.py
 
 
 ## Citation
-If you find the code helpful in your resarch, please cite the following papers.
+If you find the code helpful in your resarch, please kindly cite the following papers.
 ```
 @article{wang2021calibrated,
   title={Calibrated Hyperspectral Image Reconstruction via Graph-based Self-Tuning Network},
@@ -84,3 +84,9 @@ If you find the code helpful in your resarch, please cite the following papers.
   journal={arXiv preprint arXiv:2108.07739},
   year={2021}
 }
+
+##Contact
+If you have any questions, please contact Jiamian Wang (jiamiansc@gmail.com).
+
+## Acknowledgements
+We refer to the [TSA-Net](https://github.com/mengziyi64/TSA-Net) when we develop this code.  Great thanks to them!
