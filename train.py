@@ -8,7 +8,8 @@ import numpy as np
 from utils import *
 import torch.nn as nn
 from tqdm import tqdm, trange
-from network import TRAIN_MODEL
+from network.ST import ST_MODEL
+from network.GST import GST_MODEL
 from torch.autograd import Variable
 
 
@@ -48,9 +49,10 @@ parser.add_argument("--noise_mean",    type=float,default=0.006,  help='mask noi
 parser.add_argument("--noise_std",     type=float,default=0.006,  help='mask noise prior, i.e., Gaussian std value')
 parser.add_argument('--params_init',              default="xavier_uniform",   help="learnable param initializer for GST net", choices=['xavier_uniform', 'uniform', 'normal'])
 parser.add_argument("--inter_channels",type=int,  default=28,     help='embedding channel in GST net')
+parser.add_argument("--data_chl",      type=int,  default=28,     help='24chl or 28chl')
+
 parser.add_argument("--spatial_scale", type=int,  default=4,      help='down-scale ratio in GST net')
 parser.add_argument('--noise_act',                default="softplus",         help="the last activation function of GST net")
-parser.add_argument('--mode',                     default="many_to_many",     help="traditional/miscalibration scenarios", choices=['many_to_many', 'one_to_one', 'one_to_many'])
 args = parser.parse_args()
 
 os.environ["CUDA_VISIBLE_DEVICES"] = args.device
@@ -68,17 +70,33 @@ noise_act_dict = {'softplus': nn.Softplus(),}
 mask3d_batch_randomcrop = generate_masks(args.mask_path_real660,args.batch_size)
 mask3d_batch_real256    = generate_masks(args.mask_path_real256,args.batch_size)
 
-model_train = TRAIN_MODEL(noise_mean=args.noise_mean,
-                          noise_std=args.noise_std,
-                          init=args.params_init,
-                          noise_act=noise_act_dict[args.noise_act],
-                          inter_channels=args.inter_channels,
-                          spatial_scale=args.spatial_scale).cuda()
+if args.model_type == 'ST':
+
+    model_train = ST_MODEL(in_ch=args.data_chl,
+                           out_ch=args.data_chl,
+                           noise_mean=args.noise_mean,
+                           noise_std=args.noise_std,
+                           init=args.params_init,
+                           noise_act = noise_act_dict[args.noise_act]).cuda()
+
+elif args.model_type == 'GST':
+
+    model_train = GST_MODEL(in_ch=args.data_chl,
+                           out_ch=args.data_chl,
+                           noise_mean=args.noise_mean,
+                           noise_std=args.noise_std,
+                           init=args.params_init,
+                           noise_act=noise_act_dict[args.noise_act],
+                           inter_channels=args.inter_channels,
+                           spatial_scale=args.spatial_scale).cuda()
+else:
+    print('ERROR: invalid model type!')
+    raise ValueError
 
 
 train_set = LoadTraining(args.train_path, scale=True )
 val_set   = LoadTraining(args.val_path,   scale=False)
-test_set  = LoadTest(args.test_path, args.patch_size)
+test_set  = LoadTest_28chl(args.test_path, args.patch_size)
 
 
 if args.last_train != 0:
