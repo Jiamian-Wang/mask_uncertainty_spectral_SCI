@@ -36,20 +36,19 @@ python train.py
 
 ## Test
 
-Both 24-channel and 28-channel HSI testing data are provided. 
+Ten 256x256x28 and ten 256x256x24 benchmark testing data are provided. 
+Testing trials can be determined by specify `trial_num`
 
-Ten simulation testing HSI (256x256x28) are provided. Testing trials can be determined by specify `trial_num`
-
-To test a pre-trained model upon 28-channel data, run
-
-```
-python test.py
-```
-
-To test a pre-trained model upon 24-channel data, run
+For the 256x256x28 data type (employed in the main paper), pre-trained models of traditional/miscalibration scenarios are provided. Please specify `last_train` as 623 for `mode` `one_to_one` and `one_to_many`. Specify `last_train` as 661 for `many_to_many`. For example, run
 
 ```
-python test.py --test_path ./Data/testing/24chl/test.mat --test_data_type 24chl --model_type ST --last_train 654 --trial_num 50 --data_chl 24
+python test.py --mode many_to_many --trial_num 100 --last_train 661 --test_data_type 28chl --model_type GST --test_path ./Data/testing/28chl/ --inter_channels 28 --spatial_scale 4 --noise_act softplus
+```
+
+For the 256x256x24 data type, pre-trained model of `many_to_many` miscalibration scenario (primary concern) is provided.  For example, run
+
+```
+python test.py --test_path ./Data/testing/24chl/test.mat --mode many_to_many --trial_num 100 --last_train 654 --test_data_type 24chl --model_type ST --noise_act softplus 
 ```
 
 
@@ -58,12 +57,13 @@ python test.py --test_path ./Data/testing/24chl/test.mat --test_data_type 24chl 
 
 | directory  | description  |
 | :--------: | :----------- | 
-| `Data` | Ten simulation testing HSIs and two real masks for testing (256x256 and 660x660) | 
+| `Data` | Ten 256x256x28 testing data and ten 256x256x24 testing data | 
 | `test`    | testing script |
 | `utils`   | utility functions|
-| `network`    | GST network and simplified version |
+| `network`    | GST network and simplified version (ST) |
 | `ssim_torch`    | function for computing SSIM |
 | `model`      | pre-trained models for both 28-channel and 24-channel HSI data |
+| `train`| training script |
 
 
 ## Citation
