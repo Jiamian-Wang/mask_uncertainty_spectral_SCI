@@ -24,10 +24,10 @@ parser.add_argument("--patch_size",    type=int,  default=256,    help='training
 parser.add_argument("--noise_mean",    type=float,default=0.006,  help='mask noise prior, i.e., Gaussian mean value')
 parser.add_argument("--noise_std",     type=float,default=0.006,  help='mask noise prior, i.e., Gaussian std value')
 parser.add_argument('--params_init',              default="xavier_uniform",   help="learnable param initializer for GST net", choices=['xavier_uniform', 'uniform', 'normal'])
-parser.add_argument("--data_chl",      type=int,  default=28,     help='24chl or 28chl')
 parser.add_argument("--inter_channels",type=int,  default=28,     help='embedding channel in GST net')
 parser.add_argument("--spatial_scale", type=int,  default=4,      help='down-scale ratio in GST net')
 parser.add_argument('--noise_act',                default="softplus",         help="the last activation function of GST net")
+parser.add_argument('--mode',                     default="many_to_many",     help="traditional/miscalibration scenarios", choices=['many_to_many', 'one_to_one', 'one_to_many'])
 args = parser.parse_args()
 
 os.environ["CUDA_VISIBLE_DEVICES"] = args.device
@@ -41,13 +41,22 @@ if not torch.cuda.is_available():
 noise_act_dict = {'softplus': nn.Softplus(),}
 
 
-mask3d_batch_randomcrop = generate_masks(args.mask_path_real660, args.batch_size, data_chl=args.data_chl)
-mask3d_batch_real256 = generate_masks(args.mask_path_real256, args.batch_size, data_chl=args.data_chl)
+if args.test_data_type == '28chl':
+    test_set, data_chl = LoadTest_28chl(args.test_path, args.patch_size)
+elif args.test_data_type =='24chl':
+    test_set, data_chl = LoadTest_24chl(args.test_path)
+else:
+    print('ERROR: invalid test data type, only support 24chl & 28chl data')
+    raise ValueError
+
+
+mask3d_batch_randomcrop = generate_masks(args.mask_path_real660, args.batch_size, data_chl=data_chl)
+mask3d_batch_real256 = generate_masks(args.mask_path_real256, args.batch_size, data_chl=data_chl)
 
 if args.model_type == 'ST':
 
-    model_train = ST_MODEL(in_ch=args.data_chl,
-                           out_ch=args.data_chl,
+    model_train = ST_MODEL(in_ch=data_chl,
+                           out_ch=data_chl,
                            noise_mean=args.noise_mean,
                            noise_std=args.noise_std,
                            init=args.params_init,
@@ -55,8 +64,8 @@ if args.model_type == 'ST':
 
 elif args.model_type == 'GST':
 
-    model_train = GST_MODEL(in_ch=args.data_chl,
-                           out_ch=args.data_chl,
+    model_train = GST_MODEL(in_ch=data_chl,
+                           out_ch=data_chl,
                            noise_mean=args.noise_mean,
                            noise_std=args.noise_std,
                            init=args.params_init,
@@ -75,17 +84,10 @@ model_train.load_state_dict(ckpt['model_train'])
 print('-----pre-trained params loaded!-----')
 
 
-if args.test_data_type == '28chl':
-    test_set = LoadTest_28chl(args.test_path, args.patch_size)
-elif args.test_data_type =='24chl':
-    test_set = LoadTest_24chl(args.test_path)
-else:
-    print('ERROR: invalid test data type, only support 24chl & 28chl data')
-    raise ValueError
-
 
 def test(test_set,
          patch_size,
+         mask_mode,
          trial_num,
          batch_size,
          use_mask = mask3d_batch_real256,
@@ -97,18 +99,9 @@ def test(test_set,
 
     test_gt = test_set.cuda().float()
 
+    if mask_mode == 'real256': # 256x256 real mask do a single-shot testing
 
-    psnr_trials = []
-    ssim_trials = []
-
-    for trial in range(trial_num):
-
-        psnr_ls_eachtrial = []
-        ssim_ls_eachtrial = []
-
-        mask3d_test = shuffle_crop_mask(use_mask, batch_size, patch_size, data_chl=args.data_chl)
-        mask3d_test = Variable(mask3d_test).cuda().float()
-        y, mask3d_test = gen_meas_test(test_gt, mask3d_test, model_type = 'meas&mask')
+        y, mask3d_test = gen_meas_test(test_gt, use_mask, model_type='meas&mask')
         model_train.eval()
 
         begin = time.time()
@@ -118,60 +111,139 @@ def test(test_set,
 
         for k in range(test_gt.shape[0]):
 
-            psnr_val = torch_psnr(model_out[k,:,:,:], test_gt[k,:,:,:])
+            psnr_val = torch_psnr(model_out[k, :, :, :], test_gt[k, :, :, :])
             psnr_list.append(psnr_val.detach().cpu().numpy())
 
             ssim_val = torch_ssim(model_out[k, :, :, :], test_gt[k, :, :, :])
             ssim_list.append(ssim_val.detach().cpu().numpy())
 
-            psnr_ls_eachtrial.append(psnr_val.detach().cpu().numpy())
-            ssim_ls_eachtrial.append(ssim_val.detach().cpu().numpy())
-
         pred = np.transpose(model_out.detach().cpu().numpy(), (0, 2, 3, 1)).astype(np.float32)
         truth = np.transpose(test_gt.cpu().numpy(), (0, 2, 3, 1)).astype(np.float32)
-
-        psnr_htrial_wscene.append(psnr_ls_eachtrial)
-        ssim_htrial_wscene.append(ssim_ls_eachtrial)
 
         psnr_mean = np.mean(np.asarray(psnr_list))
         ssim_mean = np.mean(np.asarray(ssim_list))
 
-        psnr_trials.append(psnr_mean)
-        ssim_trials.append(ssim_mean)
+        print('===>testing psnr = {:.2f}, ssim = {:.5f}, time: {:.2f}'.format(psnr_mean, ssim_mean, (end - begin)))
 
-    psnr_ave = np.mean(psnr_trials)
-    psnr_std = np.std(psnr_trials)
-    ssim_ave = np.mean(ssim_trials)
-    ssim_std = np.std(ssim_trials)
+        return pred, truth, psnr_list, ssim_list, psnr_mean, ssim_mean
 
-    print('\n===>testing psnr = {:.2f}/{:.5f}, ssim = {:.5f}/{:.5f}, time: {:.2f}'.format(psnr_ave, psnr_std, ssim_ave, ssim_std, (end - begin)), '\n')
+    elif mask_mode == 'randomcrop': # random crop 256x256 real masks from the 660x660 real mask, for multi-trials testing
 
-    return pred, truth, psnr_list, ssim_list, psnr_ave, ssim_ave, np.array(psnr_htrial_wscene), np.array(ssim_htrial_wscene)
+        psnr_trials = []
+        ssim_trials = []
+
+        for trial in range(trial_num):
+
+            psnr_ls_eachtrial = []
+            ssim_ls_eachtrial = []
+
+            mask3d_test = shuffle_crop_mask(use_mask, batch_size, patch_size, data_chl=data_chl)
+            mask3d_test = Variable(mask3d_test).cuda().float()
+            y, mask3d_test = gen_meas_test(test_gt, mask3d_test, model_type = 'meas&mask')
+            model_train.eval()
+
+            begin = time.time()
+            with torch.no_grad():
+                model_out = model_train(y, mask3d_test)[0]
+            end = time.time()
+
+            for k in range(test_gt.shape[0]):
+
+                psnr_val = torch_psnr(model_out[k,:,:,:], test_gt[k,:,:,:])
+                psnr_list.append(psnr_val.detach().cpu().numpy())
+
+                ssim_val = torch_ssim(model_out[k, :, :, :], test_gt[k, :, :, :])
+                ssim_list.append(ssim_val.detach().cpu().numpy())
+
+                psnr_ls_eachtrial.append(psnr_val.detach().cpu().numpy())
+                ssim_ls_eachtrial.append(ssim_val.detach().cpu().numpy())
+
+            pred = np.transpose(model_out.detach().cpu().numpy(), (0, 2, 3, 1)).astype(np.float32)
+            truth = np.transpose(test_gt.cpu().numpy(), (0, 2, 3, 1)).astype(np.float32)
+
+            psnr_htrial_wscene.append(psnr_ls_eachtrial)
+            ssim_htrial_wscene.append(ssim_ls_eachtrial)
+
+            psnr_mean = np.mean(np.asarray(psnr_list))
+            ssim_mean = np.mean(np.asarray(ssim_list))
+
+            psnr_trials.append(psnr_mean)
+            ssim_trials.append(ssim_mean)
+
+        psnr_ave = np.mean(psnr_trials)
+        psnr_std = np.std(psnr_trials)
+        ssim_ave = np.mean(ssim_trials)
+        ssim_std = np.std(ssim_trials)
+
+        print('\n===>testing psnr = {:.2f}/{:.5f}, ssim = {:.5f}/{:.5f}, time: {:.2f}'.format(psnr_ave, psnr_std, ssim_ave, ssim_std, (end - begin)), '\n')
+
+        return pred, truth, psnr_list, ssim_list, psnr_ave, ssim_ave, np.array(psnr_htrial_wscene), np.array(ssim_htrial_wscene)
+
+    else:
+
+        print('ERROR: Invalid mask_mode, should be either [real256] or [randomcrop]')
+        raise ValueError
 
 
 
 def main():
+    if args.mode == 'many_to_many':
 
+        pred, truth, psnr_all, ssim_all, psnr_mean, ssim_mean, psnr_hw, ssim_hw = test(test_set=test_set,
+                                                                                       patch_size=args.patch_size,
+                                                                                       trial_num=args.trial_num,
+                                                                                       mask_mode='randomcrop',
+                                                                                       batch_size=args.batch_size,
+                                                                                       use_mask=mask3d_batch_randomcrop
+                                                                                       )
 
-    pred, truth, psnr_all, ssim_all, psnr_mean, ssim_mean, psnr_hw, ssim_hw = test(test_set=test_set,
-                                                                                   patch_size=args.patch_size,
-                                                                                   trial_num=args.trial_num,
-                                                                                   batch_size=args.batch_size,
-                                                                                   use_mask=mask3d_batch_randomcrop
-                                                                                   )
+        allscene_psnr_mean = np.mean(psnr_hw, axis=0)
+        print('psnr mean of 10 scenes are: ', allscene_psnr_mean)
 
-    allscene_psnr_mean = np.mean(psnr_hw, axis=0)
-    print('psnr mean of 10 scenes are: ', allscene_psnr_mean)
+        allscene_psnr_std = np.std(psnr_hw, axis=0)
+        print('psnr std of 10 scenes are: ', allscene_psnr_std)
 
-    allscene_psnr_std = np.std(psnr_hw, axis=0)
-    print('psnr std of 10 scenes are: ', allscene_psnr_std)
+        allscene_ssim_mean = np.mean(ssim_hw, axis=0)
+        print('ssim mean of 10 scenes are: ', allscene_ssim_mean)
 
-    allscene_ssim_mean = np.mean(ssim_hw, axis=0)
-    print('ssim mean of 10 scenes are: ', allscene_ssim_mean)
+        allscene_ssim_std = np.std(ssim_hw, axis=0)
+        print('ssim std of 10 scenes are: ', allscene_ssim_std)
 
-    allscene_ssim_std = np.std(ssim_hw, axis=0)
-    print('ssim std of 10 scenes are: ', allscene_ssim_std)
+    elif args.mode == 'one_to_one':
 
+        pred, truth, psnr_all, ssim_all, psnr_mean, ssim_mean = test(test_set=test_set,
+                                                                     patch_size=args.patch_size,
+                                                                     trial_num=args.trial_num,
+                                                                     mask_mode='real256',
+                                                                     batch_size=args.batch_size,
+                                                                     use_mask=mask3d_batch_real256
+                                                                     )
+
+    elif args.mode == 'one_to_many':
+        pred, truth, psnr_all, ssim_all, psnr_mean, ssim_mean, psnr_hw, ssim_hw = test(test_set=test_set,
+                                                                                       patch_size=args.patch_size,
+                                                                                       mask_mode='randomcrop',
+                                                                                       trial_num=args.trial_num,
+                                                                                       batch_size=args.batch_size,
+                                                                                       use_mask=mask3d_batch_randomcrop
+                                                                                       )
+
+        allscene_psnr_mean = np.mean(psnr_hw, axis=0)
+        print('psnr mean of 10 scenes are: ', allscene_psnr_mean)
+
+        allscene_psnr_std = np.std(psnr_hw, axis=0)
+        print('psnr std of 10 scenes are: ', allscene_psnr_std)
+
+        allscene_ssim_mean = np.mean(ssim_hw, axis=0)
+        print('ssim mean of 10 scenes are: ', allscene_ssim_mean)
+
+        allscene_ssim_std = np.std(ssim_hw, axis=0)
+        print('ssim std of 10 scenes are: ', allscene_ssim_std)
+
+    else:
+
+        print('ERROR: INVALID [mode]!')
+        raise ValueError
 
 
 if __name__ == '__main__':
