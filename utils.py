@@ -60,9 +60,7 @@ def generate_masks(mask_path,
     return mask3d_batch
 
 
-
-
-def LoadTraining(path, scale=True):
+def LoadTraining(path, data_type, scale=True):
 
     imgs = []
     scene_list = os.listdir(path)
@@ -82,13 +80,24 @@ def LoadTraining(path, scale=True):
 
         img_dict = sio.loadmat(scene_path)
 
-        if "img_expand" in img_dict:
+        if data_type == '28chl':
 
-            img = img_dict['img_expand']/65536.
+            if "img_expand" in img_dict:
 
-        elif "img" in img_dict:
+                img = img_dict['img_expand']/65536.
 
-            img = img_dict['img']/65536.
+            elif "img" in img_dict:
+
+                img = img_dict['img']/65536.
+
+        elif data_type == '24chl':
+
+            img = img_dict['data'] / 65536.
+
+        else:
+
+            print('ERROR: invalid data type, only support 28-chl or 24-chl!')
+            raise ValueError
 
         img = img.astype(np.float32)
         imgs.append(img)
