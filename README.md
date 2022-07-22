@@ -21,6 +21,7 @@ Table 1. PSNR(dB)/SSIM by different methods on 10 simulation scenes under the ma
 * Numpy 1.21.2
 * Scipy 1.7.1
 
+
 ## Train
 
 Run
@@ -32,24 +33,20 @@ python train.py
 
 ## Test
 
-28-channels dataset
-
-24-channels dataset
+Both 24-channel and 28-channel HSI testing data are provided. 
 
 Ten simulation testing HSI (256x256x28) are provided. Testing trials can be determined by specify `trial_num`
 
-To test a pre-trained model under miscalibration many-to-many, specify `mode` as many_to_many, `last_train` as 661. 
-
-
-To test a pre-trained model under miscalibration one-to-many, specify `mode` as one_to_many, `last_train` as 662. 
-
-
-To test a pre-trained model under traditional setting one-to-one, specify `mode` as one_to_one, `last_train` as 662. 
-
-Run
+To test a pre-trained model upon 28-channel data, run
 
 ```
 python test.py
+```
+
+To test a pre-trained model upon 24-channel data, run
+
+```
+python test.py --test_path ./Data/testing/24chl/test.mat --test_data_type 24chl --model_type ST --last_train 654 --trial_num 50 --data_chl 24
 ```
 
 
@@ -61,11 +58,9 @@ python test.py
 | `Data` | Ten simulation testing HSIs and two real masks for testing (256x256 and 660x660) | 
 | `test`    | testing script |
 | `utils`   | utility functions|
-| `tools`    | model components |
+| `network`    | GST network and simplified version |
 | `ssim_torch`    | function for computing SSIM |
-| `many_to_many`      | model structure and model checkpoint for miscalibration (many-to-many) |
-| `one_to_many`      | model structure and model checkpoint for miscalibration (one-to-many) |
-| `one_to_one`      | model structure and model checkpoint for traditional setting (one-to-one) |
+| `model`      | pre-trained models for both 28-channel and 24-channel HSI data |
 
 
 ## Citation
