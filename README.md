@@ -30,10 +30,15 @@ Table 1. PSNR(dB)/SSIM by different methods on 10 simulation scenes under the ma
 
 ## Train
 
-Run
+To train from stratch, run the train.py once determining the configurations
 
 ```
 python train.py
+```
+
+To resume from a checkpoint upon the `last_train` epoch, lauch the program at the checkpoint directory. Keep or modify the `stop_criteria` accordingly, for example, run 
+```
+python train.py --model_type ST --data_type 24chl --mode many_to_many --last_train 654  --stop_criteria 500
 ```
 
 
