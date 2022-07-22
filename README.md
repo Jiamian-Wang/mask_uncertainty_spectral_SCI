@@ -13,6 +13,9 @@ Recently, hyperspectral imaging (HSI) has attracted increasing research attentio
 ![RDN](/figure/framework.png)
 Figure 1. Illustration of modeling mask uncertainty with the proposed Graph-based Self-Tuning (GST) network
 
+
+## Performance
+
 Table 1. PSNR(dB)/SSIM by different methods on 10 simulation scenes under the many-to-many hardware miscalibration. All the methods are trained with a mask set and tested by random unseen masks. TSA-Net, GSM, and SRN are obtained with a mask ensemble strategy. We report mean/std among 100 testing trials.
 ![RDN](/figure/M2M_tab.png)
 
