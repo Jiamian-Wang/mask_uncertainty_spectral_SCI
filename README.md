@@ -44,6 +44,12 @@ For the 256x256x28 data type (employed in the main paper), pre-trained models of
 ```
 python test.py --mode many_to_many --trial_num 100 --last_train 661 --test_data_type 28chl --model_type GST --test_path ./Data/testing/28chl/ --inter_channels 28 --spatial_scale 4 --noise_act softplus
 ```
+```
+python test.py --mode one_to_many --trial_num 100 --last_train 623 --test_data_type 28chl --model_type GST --test_path ./Data/testing/28chl/ --inter_channels 28 --spatial_scale 4 --noise_act softplus
+```
+```
+python test.py --mode one_to_one  --last_train 623 --test_data_type 28chl --model_type GST --test_path ./Data/testing/28chl/ --inter_channels 28 --spatial_scale 4 --noise_act softplus
+```
 
 For the 256x256x24 data type, pre-trained model of `many_to_many` miscalibration scenario (primary concern) is provided.  For example, run
 
