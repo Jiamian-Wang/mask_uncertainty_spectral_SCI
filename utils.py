@@ -119,8 +119,9 @@ def LoadTest_24chl(path_test):
 
     test_data = sio.loadmat(path_test)['data']
     test_data = torch.from_numpy(np.transpose(test_data, (0, 3, 1, 2)))
+    data_chl  = test_data.shape[1]
 
-    return test_data
+    return test_data, data_chl
 
 def LoadTest_28chl(path_test, patch_size):
 
@@ -136,8 +137,9 @@ def LoadTest_28chl(path_test, patch_size):
         print(i, img.shape, img.max(), img.min())
 
     test_data = torch.from_numpy(np.transpose(test_data, (0, 3, 1, 2)))
+    data_chl  = test_data.shape[1]
 
-    return test_data
+    return test_data, data_chl
 
 
 def torch_psnr(img, ref):
