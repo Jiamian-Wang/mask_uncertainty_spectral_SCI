@@ -3,7 +3,7 @@
 
 This repository contains the source code and pre-trained models for the paper [**Modeling mask uncertainty in hyperspectral image reconstruction**](https://arxiv.org/pdf/2112.15362.pdf) by Jiamian wang, [Yulun Zhang](http://yulunzhang.com/), [Xin Yuan](https://xygroup6.github.io/xygroup/), [Ziyi Meng](https://github.com/mengziyi64), and [Zhiqiang Tao](https://ztao.cc/).
 
-##Updates
+## Updates
 More pre-trained models of compared methods will come soon!
 
 ## Introduction
