@@ -17,42 +17,43 @@ parser = argparse.ArgumentParser()
 # GPU setting #################################################
 parser.add_argument('--device',                   default='0',              help='CUDA ID(s)')
 # directories #################################################
-parser.add_argument('--mask_path_real256',        default="/data/jiamianw/NIPS2021/Data",           help="256x256 mask dir. used for single mask testing")
-parser.add_argument('--mask_path_real660',        default="/data/jiamianw/NIPS2021/Data/real_mask", help="660x660 mask dir. used for random 256x256 mask cropping")
-parser.add_argument('--test_path',                default="./Data/testing/",  help="testing .mat file dir")
-parser.add_argument('--train_path',               default="/data/jiamianw/NIPS2021/Data/training/simu/debug_mat/",  help="train .mat file dir")
-parser.add_argument('--val_path',                 default="/data/jiamianw/NIPS2021/Data/validation/fromKAIST_mat/",  help="validation .mat file dir")
-parser.add_argument('--model_dir',                default="model_GST",        help="checkpoint dir")
-parser.add_argument('--model_save_filename',      default="model_GST",        help="checkpoint folder for resume, set as '' for training from stratch")
-parser.add_argument("--psnr_set",                 type=int,  default=10,      help="PSNR value to start save checkpoint")
-parser.add_argument("--batch_size",    type=int,  default=4,       help="batch size for testing, default=1")
+parser.add_argument('--mask_path_real256',        default="./Data",             help="256x256 mask dir. used for single mask testing")
+parser.add_argument('--mask_path_real660',        default="./Data/real_mask",   help="660x660 mask dir. used for random 256x256 mask cropping")
+parser.add_argument('--test_path',                default="./Data/testing/28chl/test.mat",  help="testing .mat file dir")
+parser.add_argument('--train_path',               default="./Data/training/",   help="train .mat file dir")
+parser.add_argument('--val_path',                 default="./Data/validation/", help="validation .mat file dir")
+parser.add_argument('--model_dir',                default="model_GST",          help="checkpoint dir")
+parser.add_argument('--model_save_filename',      default="2022_08_08_08_08_08",help="checkpoint folder for resume, set as '' for training from stratch")
+parser.add_argument('--data_type',                default="28chl",              help="both 24-chl & 28-chl test data are enabled", choices=['24chl', '28chl'])
+# optimization #################################################
+parser.add_argument("--model_type",               default='GST',   help="GST network or simplified version, ST network", choices=['ST', 'GST'])
+parser.add_argument("--psnr_set",      type=int,  default=10,      help="PSNR value to start save checkpoint")
+parser.add_argument("--batch_size",    type=int,  default=1,       help="batch size for testing, default=1")
 parser.add_argument("--warmup_lr",     type=float,default=0.0004,  help='initial lr for warm up phase')
 parser.add_argument("--recon_lr",      type=float,default=0.0004,  help='initial lr for training phase')
 parser.add_argument("--noise_lr",      type=float,default=0.00001, help='initial lr for validation phase')
-parser.add_argument("--recon_lr_epoch",type=int,  default=50,      help="lr schedule for training")
-parser.add_argument("--noise_lr_epoch",type=int,  default=250,     help="lr schedule for validation")
-parser.add_argument("--recon_lr_scale",type=float,default=0.5,     help='initial lr for training phase')
-parser.add_argument("--noise_lr_scale",type=float,default=0.5,     help='initial lr for validation phase')
-parser.add_argument("--entropy_term",  type=float,default=1.0,     help='entropy term weight')
-parser.add_argument("--WARMUP_EPOCH",  type=int,  default=20,      help="epochs for warm up phase")
-parser.add_argument("--RECON_INTER",   type=int,  default=3,       help="training epochs in bilevel opt")
-parser.add_argument("--NOISE_INTER",   type=int,  default=5,       help="validation epochs in bilevel opt")
-parser.add_argument("--stop_criteria", type=int,  default=300,     help="stop training criteria")
-
-parser.add_argument("--epoch_sum_num", type=int,  default=5000,   help="#training samples per epoch")
-parser.add_argument("--last_train",    type=int,  default=0,      help='checkpoint epoch number for resume, set as 0 for training from stratch')
-parser.add_argument('--trial_num',     type=int,  default=100,    help='trial numbers for random mask testing')
-parser.add_argument("--patch_size",    type=int,  default=256,    help='training/testing data spatial size, [256] for simulation data')
-parser.add_argument("--noise_patch_size",type=int,default=128,    help='validation/testing data spatial size, [256] for simulation data')
-
-parser.add_argument("--noise_mean",    type=float,default=0.006,  help='mask noise prior, i.e., Gaussian mean value')
-parser.add_argument("--noise_std",     type=float,default=0.006,  help='mask noise prior, i.e., Gaussian std value')
-parser.add_argument('--params_init',              default="xavier_uniform",   help="learnable param initializer for GST net", choices=['xavier_uniform', 'uniform', 'normal'])
-parser.add_argument("--inter_channels",type=int,  default=28,     help='embedding channel in GST net')
-parser.add_argument("--data_chl",      type=int,  default=28,     help='24chl or 28chl')
-
-parser.add_argument("--spatial_scale", type=int,  default=4,      help='down-scale ratio in GST net')
+parser.add_argument("--recon_lr_epoch",type=int,  default=10,      help="lr schedule for training")
+parser.add_argument("--noise_lr_epoch",type=int,  default=1,       help="lr schedule for validation")
+parser.add_argument("--recon_lr_scale",type=float,default=0.9,     help='initial lr for training phase')
+parser.add_argument("--noise_lr_scale",type=float,default=0.9,     help='initial lr for validation phase')
+parser.add_argument("--entropy_term",  type=float,default=0.0,     help='entropy term weight')
+parser.add_argument("--WARMUP_EPOCH",  type=int,  default=1,       help="epochs for warm up phase")
+parser.add_argument("--RECON_INTER",   type=int,  default=1,       help="training epochs in bilevel opt")
+parser.add_argument("--NOISE_INTER",   type=int,  default=1,       help="validation epochs in bilevel opt")
+parser.add_argument("--stop_criteria", type=int,  default=100,     help="stop training criteria")
+parser.add_argument("--epoch_sum_num", type=int,  default=1000,    help="#training samples per epoch")
+parser.add_argument("--last_train",    type=int,  default=0,       help='checkpoint epoch number for resume, set as 0 for training from stratch')
+parser.add_argument('--trial_num',     type=int,  default=1,       help='trial numbers for random mask testing')
+parser.add_argument("--patch_size",    type=int,  default=256,     help='training/testing data spatial size, [256] for simulation data')
+parser.add_argument("--noise_patch_size",type=int,default=128,     help='validation/testing data spatial size, [256] for simulation data')
+parser.add_argument("--noise_mean",    type=float,default=0.1,     help='mask noise prior, i.e., Gaussian mean value')
+parser.add_argument("--noise_std",     type=float,default=0.1,     help='mask noise prior, i.e., Gaussian std value')
+parser.add_argument('--params_init',              default="normal",help="learnable param initializer for GST net", choices=['xavier_uniform', 'uniform', 'normal'])
+parser.add_argument("--inter_channels",type=int,  default=10,      help='embedding channel in GST net')
+parser.add_argument("--data_chl",      type=int,  default=28,      help='24chl or 28chl')
+parser.add_argument("--spatial_scale", type=int,  default=4,       help='down-scale ratio in GST net')
 parser.add_argument('--noise_act',                default="softplus",         help="the last activation function of GST net")
+parser.add_argument('--mode',                     default="many_to_many",     help="traditional/miscalibration scenarios", choices=['many_to_many', 'one_to_one', 'one_to_many'])
 args = parser.parse_args()
 
 os.environ["CUDA_VISIBLE_DEVICES"] = args.device
@@ -61,19 +62,31 @@ torch.backends.cudnn.benchmark = True
 if not torch.cuda.is_available():
     raise Exception('NO GPU!')
 
+
+# load test set #################
+if args.data_type == '28chl':
+    test_set, data_chl = LoadTest_28chl(args.test_path, args.patch_size)
+elif args.data_type =='24chl':
+    test_set, data_chl = LoadTest_24chl(args.test_path)
+
+
 batch_num = int(np.floor(args.epoch_sum_num/args.batch_size))
+
 
 # customized activation function could be appended here
 noise_act_dict = {'softplus': nn.Softplus(),}
 
 
-mask3d_batch_randomcrop = generate_masks(args.mask_path_real660,args.batch_size)
-mask3d_batch_real256    = generate_masks(args.mask_path_real256,args.batch_size)
+# load mask & maskset ################
+mask3d_batch_randomcrop = generate_masks(args.mask_path_real660,args.batch_size, data_chl=data_chl)
+mask3d_batch_real256    = generate_masks(args.mask_path_real256,args.batch_size, data_chl=data_chl)
 
+
+# determine network ################
 if args.model_type == 'ST':
 
-    model_train = ST_MODEL(in_ch=args.data_chl,
-                           out_ch=args.data_chl,
+    model_train = ST_MODEL(in_ch=data_chl,
+                           out_ch=data_chl,
                            noise_mean=args.noise_mean,
                            noise_std=args.noise_std,
                            init=args.params_init,
@@ -81,8 +94,8 @@ if args.model_type == 'ST':
 
 elif args.model_type == 'GST':
 
-    model_train = GST_MODEL(in_ch=args.data_chl,
-                           out_ch=args.data_chl,
+    model_train = GST_MODEL(in_ch=data_chl,
+                           out_ch=data_chl,
                            noise_mean=args.noise_mean,
                            noise_std=args.noise_std,
                            init=args.params_init,
@@ -94,9 +107,9 @@ else:
     raise ValueError
 
 
-train_set = LoadTraining(args.train_path, scale=True )
-val_set   = LoadTraining(args.val_path,   scale=False)
-test_set  = LoadTest_28chl(args.test_path, args.patch_size)
+# load train & validation data #######################
+train_set = LoadTraining(args.train_path, scale=True,  data_type=args.data_type)
+val_set   = LoadTraining(args.val_path,   scale=False, data_type=args.data_type)
 
 
 if args.last_train != 0:
@@ -108,15 +121,17 @@ if args.last_train != 0:
 
         pass
 
+
 mse = torch.nn.MSELoss().cuda()
+
 
 class LossIsNaN(Exception):
     pass
 
+
 def compute_entropy(res_noise):
 
     return torch.mean(torch.log(res_noise * math.sqrt(2*math.pi*math.e)))
-
 
 
 def save(psnr_mean,psnr_max,psnr_set,epoch, model_path,logger):
@@ -160,7 +175,7 @@ def train(model,
 
         for i in tepoch:
 
-            gt_batch = shuffle_crop(train_set, args.batch_size, patch_size)
+            gt_batch = shuffle_crop(train_set, args.batch_size, patch_size, data_chl=data_chl)
             gt = Variable(gt_batch).cuda().float()
 
             if args.mode == 'one_to_many' or args.mode == 'one_to_one':
@@ -168,12 +183,12 @@ def train(model,
                 if patch_size>128:
                     mask3d_train = mask3d_batch_real256
                 else:
-                    mask3d_train = shuffle_crop_mask(mask3d_batch_real256, args.batch_size, patch_size)
+                    mask3d_train = shuffle_crop_mask(mask3d_batch_real256, args.batch_size, patch_size, data_chl=data_chl)
                     mask3d_train = Variable(mask3d_train).cuda().float()
 
             elif args.mode == 'many_to_many':
 
-                mask3d_train = shuffle_crop_mask(mask3d_batch_randomcrop, args.batch_size, patch_size)
+                mask3d_train = shuffle_crop_mask(mask3d_batch_randomcrop, args.batch_size, patch_size, data_chl=data_chl)
                 mask3d_train = Variable(mask3d_train).cuda().float()
 
             else:
@@ -295,7 +310,7 @@ def test(test_set,
 
             else:
 
-                mask3d_test = shuffle_crop_mask(mask3d_batch_real256, args.batch_size, patch_size)
+                mask3d_test = shuffle_crop_mask(mask3d_batch_real256, args.batch_size, patch_size, data_chl=data_chl)
                 mask3d_test = Variable(mask3d_test).cuda().float()
 
             y, mask3d_test = gen_meas_test(test_gt, mask3d_test, model_type='meas&mask')
