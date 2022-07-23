@@ -108,13 +108,13 @@ class Res_GCN_BCP(nn.Module):
         return v_star
 
 
-class MyBlock(nn.Module):
+class Stack_Block(nn.Module):
     def __init__(self, conv, n_feats,
                  kernel_size,bias=True,
                  bn=False, act=nn.ReLU(True),
                  res_scale=1):
 
-        super(MyBlock, self).__init__()
+        super(Stack_Block, self).__init__()
         m = []
 
         for i in range(2):
@@ -154,7 +154,7 @@ class GST_MODEL(nn.Module):
 
         m_head = [conv(in_ch, n_feats, kernel_size)]
 
-        m_noise_body = [MyBlock(conv, n_feats_noise, kernel_size, act=act, res_scale=1),Res_GCN_BCP(n_feats_noise, inter_channels, spatial_scale)]
+        m_noise_body = [Stack_Block(conv, n_feats_noise, kernel_size, act=act, res_scale=1),Res_GCN_BCP(n_feats_noise, inter_channels, spatial_scale)]
         m_noise_body.append(act)
         m_noise_body.append(conv(n_feats_noise, 1, kernel_size,))
         m_noise_body.append(noise_act)
